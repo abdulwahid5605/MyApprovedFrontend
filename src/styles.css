@@ -1,0 +1,598 @@
+
+@tailwind components;
+@tailwind utilities;
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #ffbe17; /* Yellow background */
+  color: #fff; /* White text */
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  border: 1px solid #ffbe17; /* Optional for border outline */
+}
+
+.button-link:hover {
+  background-color: #e6a617; /* Slightly darker yellow on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.button-link:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
+}
+
+
+body {
+ 
+  margin: 0; /* Remove default margin to ensure consistent layout */
+  padding: 0; /* Remove default padding to ensure consistent layout */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  background-image: linear-gradient(to right, #888, #fff, #888);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #000000;
+}
+
+/* Header styles */
+.header {
+  background-color: #eef9ff;
+  color: #000; /* Change text color for better contrast */
+}
+
+.logo {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 14px 6px; /* Add padding to buttons for better clickability */
+  background-color: transparent;
+  border: 1px solid #000; /* Add border to buttons for better visibility */
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.buttons button.yellow {
+  background-color: #ffc107;
+  border: 1px solid #ffc107; /* Change border color to transparent for yellow button */
+}
+
+.buttons button:hover {
+  background-color: transparent; /* Change background color on hover for better feedback */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* White background for dropdown */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  z-index: 999;
+  border-radius: 4px; /* Rounded edges */
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  color: #000; /* Text color */
+  padding: 12px 16px; /* Padding for comfortable click area */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+.dropdown-content a img {
+  margin-right: 8px; /* Space between flag and text */
+  vertical-align: middle;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0; /* Light grey hover effect */
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main styles */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner {
+  flex: 1;
+}
+
+.banner-full {
+  background: url("https://i.postimg.cc/Cx6TsbQX/Untitled-1750-700px-3750-1000px-7750-500px-7750-2000px-1903-478px-2-edited.png")
+    no-repeat top center;
+    background-size: cover;
+  
+}
+.about-banner{
+  height: 50vh;
+}
+
+.banner img {
+  width: 95%;
+}
+.content {
+  position: absolute;
+  top: 40%;
+  left: 35px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+ .content h2 {
+  /* font-size: 50px; */
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.content span {
+  color: #fee151;
+}
+.content p {
+  /* font-size: 24px; */
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.search-bar {
+  display: flex;
+}
+
+
+.search-bar button {
+  padding: 11px 25px;
+  border: none;
+  background-color: #ffbe17;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #000000;
+  color: #698269;
+}
+.services {
+  /* position: relative;   */
+}
+@keyframes moveDot {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 1rem); /* 1rem is the width of the dot */
+  }
+}
+
+.animate-move-dot {
+  animation: moveDot 8s linear infinite;
+}
+
+.slide {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 30px 20px 30px;
+  background-color: #eef9ff; /* Example background color */
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.281);
+}
+
+.active-slide {
+  width: 99% !important;
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff; /* Example background color */
+}
+
+.custom-controls {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Style the control boxes when active */
+.control-box.active {
+  background-color: #ffbe17;
+  width: 20px;
+}
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-card {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.image-card img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-card:hover img {
+  transform: scale(1.1);
+}
+.font-rubik{
+  font-family: Rubik, sans-serif;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.image-text h2 {
+  margin-top: 0;
+}
+
+.image-text button {
+  background-color: #0056b3;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.image-text button:hover {
+  background-color: #004080;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.footer-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul li a:hover {
+  color: #007bff;
+}
+.thebanner {
+  position: absolute; /* Position the banner relative to the card */
+  top: 0;
+  left: 0;
+  width: 180%;
+  z-index: -1; /* Ensure the banner stays behind other content */
+}
+
+.card-body {
+  width: 1100px; /* Adjust the width as needed */
+  padding: 40px; /* Adjust padding as needed */
+  /* Box Shadow */
+  box-shadow: 5px 90px 90px rgba(10, 10, 10, 10.5); /* Soft black shadow effect with equal spread on both sides */
+  background-color: #fff; /* Set a white background color */
+  border-radius: 0px; /* Add some border radius to soften the edges */
+  margin-top: -10px; /* Adjust margin-top to create space between banner and card */
+  margin-left: 60px; /* Adjust margin-left to move the card more to the left */
+  font-family: Rubik, sans-serif; /* Move font styles to card-body */
+  font-size: 20.8px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 37.44px;
+  text-decoration: none;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  vertical-align: baseline;
+  white-space: normal;
+  word-spacing: 0;
+}
+
+.multi-step-form {
+  position: fixed; /* Use fixed positioning */
+  top: 50%; /* Center vertically */
+  left: 80%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for element dimensions */
+  width: 90%; /* Set a max width */
+  max-width: 500px; /* Limit the max width for larger screens */
+  background-color: rgb(221, 121, 121); /* Background color for visibility */
+  padding: 20px; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000; /* Ensure it appears above other elements */
+  background: #fff;
+  
+}
+
+/* Heading styles */
+.multi-step-form h2 {
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  color: #333333;
+}
+
+/* Input and select styles */
+.multi-step-form select,
+.multi-step-form input[type="text"],
+.multi-step-form input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #c41212;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  background-color: #000000;
+}
+
+/* Focus styles */
+.multi-step-form select:focus,
+.multi-step-form input[type="text"]:focus,
+.multi-step-form input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+  
+}
+
+/* Button styles */
+.multi-step-form button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #020101;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Disabled button styles */
+.multi-step-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Button hover styles */
+.multi-step-form button:not(:disabled):hover {
+  background-color: #ffbe17;
+}
+
+/* Label styles */
+.multi-step-form label {
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Button container */
+.multi-step-form .button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Back button styles */
+.multi-step-form .back-button,
+.multi-step-form .continue-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #1a0303;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Back button hover styles */
+.multi-step-form .back-button:hover,
+.multi-step-form .continue-button:hover {
+  background-color: #ffbe17;
+}
+
+/* Progress indicator */
+.multi-step-form .progress-indicator {
+  margin-bottom: 30px;
+}
+
+.multi-step-form .progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.multi-step-form .step {
+  width: 25%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.multi-step-form .step.active {
+  background-color: #007bff;
+}
+
+/* Error message */
+.multi-step-form .error-message {
+  color: #ff0000;
+  margin-top: 10px;
+}
+/* CSS for MultiStepForm component */
+
+.multi-step-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.progress-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  flex: 1;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.step.active {
+  background-color: #007bff;
+}
+/* Drop Section Container */
+.drop-section {
+  margin: 140px;
+}
+
+/* Header Styles */
+.drop-section h2 {
+  color: #333; /* Dark color for readability */
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.drop-section h2:hover {
+  color:#ffc107 ; /* Vibrant color on hover for attention */
+}
+
+/* Dropdown Grid Container */
+.drop-section .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .drop-section {
+    margin: 10px;
+  }
+  
+  .drop-section .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .drop-section .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Dropdown Item Styling */
+.drop-section .grid div {
+  padding: 0.75rem;
+  background-color: rgb(238 249 255 / var(--tw-bg-opacity));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-section .grid div:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Button Styling Inside Each Location Box */
+.drop-section .grid div button {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.drop-section .grid div button:hover {
+  color:#ffc107 ;
+}
+
+/* Selected Location Styling */
+.drop-section .grid div.selected {
+  background-color: #ffe0b2; /* Light orange to indicate selection */
+  color: #333;
+}
+
+.drop-section .grid div.selected button {
+  color: #333;
+  font-weight: bold;
+}
+

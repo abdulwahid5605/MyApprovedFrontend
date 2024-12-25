@@ -1,0 +1,19 @@
+{
+    "header": {
+      "clientDropdown": "Client",
+      "tradesDropdown": "Trades",
+      "languageDropdown": "Language"
+    },
+    "buttons": {
+      "signUp": "Sign up",
+      "logIn": "Log in",
+      "register": "Register",
+      "signIn": "Sign in"
+    },
+    "languages": {
+      "english": "English",
+      "spanish": "Spanish",
+      "french": "French"
+    }
+  }
+  
