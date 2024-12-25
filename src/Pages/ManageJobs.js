@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./manageJobs.css";
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 
 const ManageJobs = () => {
@@ -12,7 +13,7 @@ const ManageJobs = () => {
 
     const fetchJobs = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/jobs", {
+            const response = await fetch(`${BACKENDURL}/api/admin/jobs`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
                 },
@@ -30,7 +31,7 @@ const ManageJobs = () => {
         if (!confirmDelete) return;
     
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/jobs/${jobId}`, {
+            const response = await fetch(`${BACKENDURL}/api/admin/jobs/${jobId}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,

@@ -1,6 +1,7 @@
 import "./TradepersonDashboard.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKENDURL } from "../config";
 
 function TradespersonDashboard() {
   const [jobs, setJobs] = useState([]); // Initialize jobs as an empty array
@@ -11,7 +12,7 @@ function TradespersonDashboard() {
   const fetchJobs = async (page) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/matching-jobs?page=${page}&limit=10`,
+        `${BACKENDURL}/api/matching-jobs?page=${page}&limit=10`,
         {
           method: "GET",
           headers: {

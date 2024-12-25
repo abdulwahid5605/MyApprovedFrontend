@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./manageTradeperson.css"; // Import the CSS file
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 const ManageTradespersons = () => {
     const [tradespersons, setTradespersons] = useState([]);
@@ -13,7 +14,7 @@ const ManageTradespersons = () => {
 
     const fetchTradespersons = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/tradespeople", {
+            const response = await fetch(`${BACKENDURL}/api/admin/tradespeople`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
                 },
@@ -34,7 +35,7 @@ const ManageTradespersons = () => {
         if (!window.confirm("Are you sure you want to delete this tradesperson?")) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/tradespeople/${id}`, {
+            const response = await fetch(`${BACKENDURL}/api/admin/tradespeople/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -57,7 +58,7 @@ const ManageTradespersons = () => {
         if (!editFormData) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/tradespeople/${editFormData._id}`, {
+            const response = await fetch(`${BACKENDURL}/api/admin/tradespeople/${editFormData._id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,

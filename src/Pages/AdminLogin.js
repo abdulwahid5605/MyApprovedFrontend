@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { BACKENDURL } from "../config";
 
 const AdminLogin = () => {
     const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const AdminLogin = () => {
         setError("");
 
         try {
-            const response = await fetch("http://localhost:5000/api/admin/login", {
+            const response = await fetch(`${BACKENDURL}/api/admin/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

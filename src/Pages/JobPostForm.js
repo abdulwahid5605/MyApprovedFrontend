@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./JobPostForm.css"; // Optional CSS for styling
 import { motion } from "framer-motion";
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 const boxStyle = {
   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
@@ -47,7 +48,7 @@ const PostJob = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/post-job", {
+      const response = await fetch(`${BACKENDURL}/api/post-job`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify"
+import { BACKENDURL } from '../config';
 
 function QuotationForm() {
     const { jobId } = useParams(); // Get the jobId from the URL
@@ -14,7 +15,7 @@ function QuotationForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/apply-job/${jobId}`, {
+            const response = await fetch(`${BACKENDURL}/api/apply-job/${jobId}`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,

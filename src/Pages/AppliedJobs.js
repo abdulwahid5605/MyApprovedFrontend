@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AppliedJobs.css'; // CSS file for styling
+import { BACKENDURL } from '../config';
 
 function AppliedJobs() {
     const [appliedJobs, setAppliedJobs] = useState([]);
@@ -8,7 +9,7 @@ function AppliedJobs() {
 
     const fetchAppliedJobs = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/applied-jobs', {
+            const response = await fetch(`${BACKENDURL}/api/applied-jobs`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,

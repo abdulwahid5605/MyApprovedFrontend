@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./ClientDashboard.css";
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 const ClientDashboard = () => {
     const [jobs, setJobs] = useState([]);
@@ -13,7 +14,7 @@ const ClientDashboard = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/jobs?email=${clientEmail}`);
+                const response = await fetch(`${BACKENDURL}/api/jobs?email=${clientEmail}`);
                 if (response.ok) {
                     const data = await response.json();
                     setJobs(data);
@@ -37,7 +38,7 @@ const ClientDashboard = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/accept-quotation/${jobId}/${quotationId}`,
+                `${BACKENDURL}/api/accept-quotation/${jobId}/${quotationId}`,
                 {
                     method: "POST",
                     headers: {
@@ -49,7 +50,7 @@ const ClientDashboard = () => {
             if (response.ok) {
                 toast.success("Quotation accepted successfully!");
                 // Refetch jobs to reflect the changes
-                const updatedJobsResponse = await fetch(`http://localhost:5000/api/jobs?email=${clientEmail}`);
+                const updatedJobsResponse = await fetch(`${BACKENDURL}/api/jobs?email=${clientEmail}`);
                 const updatedJobs = await updatedJobsResponse.json();
                 setJobs(updatedJobs);
             } else {

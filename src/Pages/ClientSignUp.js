@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-input-2"; // Import the library
 import "react-phone-input-2/lib/style.css"; // Import styles
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BACKENDURL } from "../config";
 
 const ClientRegister = () => {
   const navigate = useNavigate();
@@ -89,7 +90,7 @@ const ClientRegister = () => {
     try {
       // Make the API call
       const response = await axios.post(
-        "http://localhost:5000/client/register",
+        `${BACKENDURL}/client/register`,
         {
           ...formData,
           phoneNumber: `+${formData.phoneNumber}`, // Ensure phoneNumber is formatted

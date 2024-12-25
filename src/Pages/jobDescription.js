@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./JobDescription.css"; // Optional CSS
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 const JobDescription = () => {
   const [description, setDescription] = useState("");
@@ -20,7 +21,7 @@ const JobDescription = () => {
 
     setError("");
     try {
-      const response = await fetch(`http://localhost:5000/api/job-description/${jobId}`, {
+      const response = await fetch(`${BACKENDURL}/api/job-description/${jobId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

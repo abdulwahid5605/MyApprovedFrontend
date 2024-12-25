@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./manageClients.css";
 import { toast } from "react-toastify"
+import { BACKENDURL } from "../config";
 
 const ManageClients = () => {
     const [clients, setClients] = useState([]);
@@ -13,7 +14,7 @@ const ManageClients = () => {
 
     const fetchClients = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/admin/clients", {
+            const response = await fetch(`${BACKENDURL}/api/admin/clients`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
                 },
@@ -34,7 +35,7 @@ const ManageClients = () => {
         if (!window.confirm("Are you sure you want to delete this client?")) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/clients/${id}`, {
+            const response = await fetch(`${BACKENDURL}/api/admin/clients/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
@@ -57,7 +58,7 @@ const ManageClients = () => {
         if (!editFormData) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/clients/${editFormData._id}`, {
+            const response = await fetch(`${BACKENDURL}/api/admin/clients/${editFormData._id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("adminToken")}`,

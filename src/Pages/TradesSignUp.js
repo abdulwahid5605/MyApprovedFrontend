@@ -4,6 +4,7 @@ import axios from "axios";
 import PhoneInput from "react-phone-input-2"; // For phone number input
 import "react-phone-input-2/lib/style.css"; // Styles for phone input
 import "./TradepersonRegister.css"; // External CSS for styling
+import { BACKENDURL } from "../config";
 
 const TradepersonRegister = () => {
     const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ const TradepersonRegister = () => {
         if (!validateForm()) return;
 
         try {
-            const response = await axios.post("http://localhost:5000/tradeperson/register", formData);
+            const response = await axios.post(`${BACKENDURL}/tradeperson/register`, formData);
             setSuccessMessage("Registration successful! Redirecting to login page...");
             setTimeout(() => navigate("/login"), 2000);
         } catch (error) {

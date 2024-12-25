@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ClientSignIn.css"; // Ensure this file exists and is correctly styled
+import { BACKENDURL } from "../config";
 
 const ClientSignIn = () => {
   const [email, setEmail] = useState(""); // State for email
@@ -15,7 +16,7 @@ const ClientSignIn = () => {
     setErrorMessage(""); // Clear any previous error messages
 
     try {
-      const response = await fetch("http://localhost:5000/client/login", {
+      const response = await fetch(`${BACKENDURL}/client/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Set the content type for JSON payload
